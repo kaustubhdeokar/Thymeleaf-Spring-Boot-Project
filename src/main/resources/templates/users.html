@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet" th:href="@{/css/application.css}">
+</head>
+<body>
+
+<h1 th:text="${pageTitle}"></h1>
+
+<ul>
+    <div th:each="map: ${user}">
+        <a th:href="@{./users/{key}(key=${map.getKey()})}"><span th:text="${map.getKey()}"></span></a>
+        <span th:text="${map.getValue()}"></span>
+    </div>
+</ul>
+</body>
+</html>
