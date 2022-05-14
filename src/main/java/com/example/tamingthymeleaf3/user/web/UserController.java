@@ -36,7 +36,7 @@ public class UserController {
 
     @PostMapping("/users/create")
     public String saveUserForm(@Valid @ModelAttribute("user") CreateUserFormData formData, //<.>
-                               BindingResult bindingResult, Model model){
+                               BindingResult bindingResult, Model model) {
 
         if (bindingResult.hasErrors()) { //<.>
             model.addAttribute("genders", List.of(Gender.MALE, Gender.FEMALE, Gender.OTHER)); //<.>
@@ -56,12 +56,12 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public String editUserForm(@PathVariable("id") UserId userId, Model model){
+    public String editUserForm(@PathVariable("id") UserId userId, Model model) {
 
         User user = userService.getUser(userId)
                 .orElseThrow(() -> new UserNotFoundException(userId));
 
-        model.addAttribute("user", EditUserFormData.fromUser(user));`
+        model.addAttribute("user", EditUserFormData.fromUser(user));
         model.addAttribute("genders", List.of(Gender.MALE, Gender.FEMALE, Gender.OTHER));
         model.addAttribute("editMode", EditMode.UPDATE);
 
@@ -70,7 +70,7 @@ public class UserController {
 
     @PostMapping("/users/{id}")
     public String saveEditedUser(@PathVariable("id") UserId userId, @Validated(EditUserValidationGroupSequence.class) @ModelAttribute("user") EditUserFormData formData,
-                                 BindingResult bindingResult, Model model){
+                                 BindingResult bindingResult, Model model) {
 
         if (bindingResult.hasErrors()) {
             model.addAttribute("genders", List.of(Gender.MALE, Gender.FEMALE, Gender.OTHER));
@@ -80,6 +80,12 @@ public class UserController {
 
         userService.editUser(userId, formData.toParameters());
 
+        return "redirect:/users";
+    }
+
+    @PostMapping("/users/{id}/delete")
+    public String doDeleteUser(@PathVariable("id") UserId userId) {
+        userService.deleteUser(userId);
         return "redirect:/users";
     }
 
