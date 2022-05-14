@@ -83,9 +83,10 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @PostMapping("/users/{id}/delete")
-    public String doDeleteUser(@PathVariable("id") UserId userId) {
+    @GetMapping("/users/delete/{id}")
+    public String doDeleteUser(@PathVariable("id") UserId userId, Model model) {
         userService.deleteUser(userId);
+        System.out.println("delete service called!");
         return "redirect:/users";
     }
 
