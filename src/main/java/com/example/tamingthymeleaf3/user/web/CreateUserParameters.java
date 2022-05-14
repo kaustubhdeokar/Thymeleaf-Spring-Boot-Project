@@ -1,4 +1,9 @@
-package com.example.tamingthymeleaf3.user;
+package com.example.tamingthymeleaf3.user.web;
+
+import com.example.tamingthymeleaf3.user.Email;
+import com.example.tamingthymeleaf3.user.Gender;
+import com.example.tamingthymeleaf3.user.PhoneNumber;
+import com.example.tamingthymeleaf3.user.UserName;
 
 import java.time.LocalDate;
 
@@ -40,4 +45,5 @@ public class CreateUserParameters {
     public PhoneNumber getPhoneNumber() {
         return phoneNumber;
     }
+
 }

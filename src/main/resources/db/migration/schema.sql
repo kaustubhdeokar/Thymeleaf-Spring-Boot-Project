@@ -1,6 +1,7 @@
 CREATE TABLE tt_user
 (
     id           UUID    NOT NULL,
+    version BIGINT NOT NULL,
     firstName   VARCHAR NOT NULL,
     lastName    VARCHAR NOT NULL,
     gender       VARCHAR NOT NULL,

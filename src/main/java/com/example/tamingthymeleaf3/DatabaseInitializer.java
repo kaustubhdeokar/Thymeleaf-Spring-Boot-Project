@@ -1,6 +1,7 @@
 package com.example.tamingthymeleaf3;
 
 import com.example.tamingthymeleaf3.user.*;
+import com.example.tamingthymeleaf3.user.web.CreateUserParameters;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 import org.apache.commons.lang3.StringUtils;

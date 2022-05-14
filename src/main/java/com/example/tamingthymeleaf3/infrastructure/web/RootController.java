@@ -1,6 +1,7 @@
-package com.example.tamingthymeleaf3;
+package com.example.tamingthymeleaf3.infrastructure.web;
 
 
+import com.example.tamingthymeleaf3.UserDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

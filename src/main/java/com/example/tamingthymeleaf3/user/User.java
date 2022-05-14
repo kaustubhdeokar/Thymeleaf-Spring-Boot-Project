@@ -1,6 +1,6 @@
 package com.example.tamingthymeleaf3.user;
 
-import io.github.wimdeblauwe.jpearl.AbstractEntity;
+import io.github.wimdeblauwe.jpearl.AbstractVersionedEntity;
 import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Enumerated;
 import java.time.LocalDate;
 
 @Entity(name = "tt_user")
-public class User extends AbstractEntity<UserId> {
+public class User extends AbstractVersionedEntity<UserId> {
 
     @NotNull
     private UserName userName; //<.>
@@ -58,5 +58,25 @@ public class User extends AbstractEntity<UserId> {
 
     public PhoneNumber getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public void setUserName(UserName userName) {
+        this.userName = userName;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
+
+    public void setEmail(Email email) {
+        this.email = email;
+    }
+
+    public void setPhoneNumber(PhoneNumber phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

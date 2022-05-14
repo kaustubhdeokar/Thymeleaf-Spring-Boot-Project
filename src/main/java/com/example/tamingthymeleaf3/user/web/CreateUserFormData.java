@@ -1,6 +1,5 @@
 package com.example.tamingthymeleaf3.user.web;
 
-import com.example.tamingthymeleaf3.user.CreateUserParameters;
 import com.example.tamingthymeleaf3.user.Gender;
 import com.example.tamingthymeleaf3.user.PhoneNumber;
 import com.example.tamingthymeleaf3.user.UserName;
