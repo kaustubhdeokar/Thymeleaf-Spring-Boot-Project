@@ -1,4 +1,4 @@
-package com.example.tamingthymeleaf3.web;
+package com.example.tamingthymeleaf3.team.web;
 
 import com.example.tamingthymeleaf3.team.Team;
 import com.example.tamingthymeleaf3.team.TeamService;
@@ -37,7 +37,7 @@ public class TeamController {
     @PostMapping("/teams/{id}")
     public String editTeamName(@PathVariable("id") String teamId) {
         service.changeTeamName(teamId, "newTeamName");
-        return "redirect:/teams/all";
+        return "redirect:/teams/list";
     }
 
 
